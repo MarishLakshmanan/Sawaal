@@ -134,7 +134,7 @@ passport.deserializeUser(function(id, done) {
 passport.use(new GoogleStrategy({
     clientID:     process.env.CLIENT_ID,
     clientSecret: process.env.CLIENT_SECRET,
-    callbackURL: "http://localhost:3000/auth/google/login",
+    callbackURL: "https://shrouded-tor-43959.herokuapp.com/auth/google/login",
     passReqToCallback   : true,
 
   },
@@ -490,7 +490,7 @@ async function sendMail(userID,token){
         }
     });
 
-    const l = "http://localhost:3000/change-password/"+userID+"/"+token;
+    const l = "https://shrouded-tor-43959.herokuapp.com/change-password/"+userID+"/"+token;
 
     const mailOptions = {
         from:"Sawaal",
