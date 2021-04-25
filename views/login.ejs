@@ -1,0 +1,81 @@
+<%- include("partials/header") -%>
+
+
+<body>
+
+    <!-- Header section -->
+    <header>
+        <h1 class="title">Sawaal <img src="/resources/sword.svg" width="25px"></h1>
+        <a href="/sign-up">sign up</a>
+    </header>
+    
+<!-- main section -->
+<main class="main-section">
+    <section class="get-started">
+        <p>
+            sawaal is your virtual buddy from the world wide web who will motivate you to take up challenges and help you to keep track of your progrees and motivate you whenever you need it.<br><br>
+            sawaal let you take up any challenge which you have to do for another 30 days,60 days or 100 days.If you want to grow any any new hobbies you can use sawaal.<br><br>It is proven that,if you do something for 30 days daily it will become a part of your lifestyle.<br><br>
+            Do you want take 100 days of coding challenge? sawaal can help you to keep track of your progress and motivate you.<br><br>
+            THE ONLY RULE IS :<br><br>
+            Once you start a challenge you have to complete it without any breaks.<br>
+            You have to post your progress in sawaal.<br>
+            If you miss this process even one day your progress will be reset.<br>
+            Are you ready to become a best version of yourself ?<br>
+        </p>
+       <div class="btn-get-started">
+           <a href="/sign-up">Get Started</a>
+       </div>
+  </section>
+  
+   <div class="login-form">
+       <h1>Log in</h1>
+       <div class="sign-in-google">
+       <a href="/auth/google"> <i class="fab fa-google"></i>&nbsp;&nbsp;Login with Google</a>
+       </div>
+       <p>or use your own account</p>
+       <form class="form" action="/login" method="post">
+           <input type="text" name="username" id="" placeholder="Username" required>
+           <input type="password" name="password" id="" placeholder="Password" required><br>
+           <a onclick="openPopUp()" href="#">Forgot password ?</a><br>
+           
+           <% if(messages.error){ %>
+            <p style="color: red; font-size: 14px; margin-top: 5px; margin-bottom: -15px;"><%= messages.error %> </p>
+           <% } %>
+           <button>Log in</button>
+           <p>don't have an account ? <a href="/sign-up">sign up</a></p>
+       </form>
+   </div>
+</main>
+
+<!-- Cirlces -->
+
+<div class="circle-group">
+    <div class="circle1"></div>
+    <div class="circle2"></div>
+    <div class="circle3"></div>
+    <div class="circle4"></div>
+</div>
+
+<div class="forgot-password">
+    <div style="margin-top: 10px; cursor: pointer;"><i onclick="closePopUp()" class="far fa-times-circle fa-lg"></i></div>
+    <form action="/forgot-password" method="POST">
+        <p >Enter your Email-id</p>
+        <input type="email" name="email" id="username" required autocomplete="off">
+        <br>
+        <button type="submit">submit</button>
+    </form>
+</div>
+
+<script>
+    function openPopUp(){
+        document.querySelector(".forgot-password").classList.add("active");
+    }
+    function closePopUp(){
+        document.querySelector(".forgot-password").classList.remove("active");
+    }
+</script>
+ 
+
+</body>
+
+<%- include("partials/footer") -%> 

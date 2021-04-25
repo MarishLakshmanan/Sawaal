@@ -1,0 +1,46 @@
+<%- include("partials/header") -%> 
+
+<div class="edit-user">
+    <form action="/edit-user" method="POST" enctype="multipart/form-data">
+        <div class="img-section">
+            <p style="color: red;">
+                <%= typeof msg != undefined ? msg:" " %> 
+            </p>
+            <img  src="resources/worker.png" alt="">
+            <div style="text-align: center;">Upload your image</div>
+            <input type="file" name="userImage" id="" accept="image/*">
+            <div onclick="activateFile()" class="hover-add"><i class="fas fa-arrow-circle-up fa-5x" style="color: rgba(105, 105, 105, 0.473);"></i></div>
+        </div>
+        <div class="text-section">
+            <input type="text" name="username" id="" required placeholder="Enter your name">
+            <textarea name="userBio" id=""  rows="7" required placeholder="Bio"></textarea>
+            <button type="submit">save</button>
+        </div>
+        <a href="/"><i class="fas fa-times close"></i></a>
+    </form>
+    
+    <br>
+</div>
+
+<script>
+    const image = document.querySelector(".img-section img");
+    const inputFile = document.querySelector(".img-section input");
+    function activateFile(){
+        inputFile.click();
+    }
+
+    inputFile.addEventListener("change",function(){
+        const file = this.files[0];
+        if(file){
+            const reader = new FileReader();
+            reader.onload = function(){
+                const result = reader.result;
+                image.src = result;
+            }
+            reader.readAsDataURL(file);
+        }
+    });
+
+</script>
+
+<%- include("partials/footer") -%> 

@@ -1,0 +1,31 @@
+<%- include("partials/header") -%>
+<body>
+    <div class="main-content">
+        <section class="section-left">
+            <h1>Let's create you an <br> account</h1>
+            <img src="/resources/sword.svg" alt="" width="150px">
+        </section>
+        <section class="section-right">
+            <form action="/sign-up" method="POST">
+                <h1>Sign up</h1>
+                <input type="text" name="username" id="user" required><span onclick="setFocusText()">Username</span>
+                <input type="email"  name="email" id="" required><span onclick="setFocusEmail()" >E-mail</span>
+                <input type="password" name="password" id="" required><span onclick="setFocusUser()" >Password</span>
+                <button type="submit">Sign in</button>
+            </form>
+        </section>
+    </div>
+    
+    <script>
+        function setFocusText(){
+            document.querySelector(".section-right form input[type=text]").focus();
+        }
+        function setFocusEmail(){
+            document.querySelector(".section-right form input[type=email]").focus();
+        }
+        function setFocusUser(){
+            document.querySelector(".section-right form input[type=password]").focus();
+        }
+    </script>
+</body>
+<%- include("partials/footer") -%> 

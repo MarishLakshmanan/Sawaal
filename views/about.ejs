@@ -1,0 +1,41 @@
+<%- include("partials/headerMain") -%> 
+
+<div class="about-page">
+    <section class="left-section">
+        <h1>Sawaal</h1>
+        <img src="resources/sword.svg" alt="">
+    </section>
+    <section class="right-section">
+        <p>
+            sawaal is your virtual buddy from the world wide web who will motivate you to take up challenges and help you to keep track of your progrees and motivate you whenever you need it.<br><br>
+            sawaal let you take up any challenge which you have to do for another 30 days,60 days or 100 days.If you want to grow any any new hobbies you can use sawaal.<br><br>It is proven that,if you do something for 30 days daily it will become a part of your lifestyle.<br><br>
+            Do you want take 100 days of coding challenge? sawaal can help you to keep track of your progress and motivate you.<br><br>
+            THE ONLY RULE IS :<br><br>
+            Once you start a challenge you have to complete it without any breaks.<br>
+            You have to post your progress in sawaal.<br>
+            If you miss this process even one day your progress will be reset.<br>
+            Are you ready to become a best version of yourself ?<br>
+        </p>
+    </section>
+
+    <div class="circle-group">
+        <div class="circle1"></div>
+        <div class="circle2"></div>
+        <div class="circle3"></div>
+        <div class="circle4"></div>
+    </div>
+</div>
+
+
+<script type="text/javascript">
+
+    function toggleNav(){
+        const toggle =  document.querySelector(".navIcon");
+        const navBar = document.querySelector("header nav");
+
+        toggle.classList.toggle("active");
+        navBar.classList.toggle("active");
+    }
+    </script>
+
+<%- include("partials/footerMain") -%> 

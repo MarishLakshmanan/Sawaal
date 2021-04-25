@@ -1,0 +1,591 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: 'Heebo', sans-serif;
+    box-sizing: border-box;
+}
+
+
+/* Home page CSS */
+
+body{
+    background-color: #f7f9fa;
+    
+    box-sizing: border-box;
+}
+
+/* header section */
+
+header{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 9999;
+    padding: 1.5rem 6rem 0;
+}
+
+header h1{
+    font-family: 'Heebo', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 400;
+    cursor: pointer;
+}
+header h1+a{
+    text-decoration: none;
+    color: rgb(68, 67, 67);
+    font-weight: 600;
+    
+}
+
+/* main secction */
+
+.main-section{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    z-index: 999;
+    padding: .5rem 6rem;
+    
+}
+
+/* get started */
+
+.get-started{
+    width: 50%;
+    height: 75%;
+    position: relative;
+    top: 7em;
+}
+
+.btn-get-started a{
+    letter-spacing: 1px;
+    text-decoration: none;
+    color: black;
+    font-weight: 600;
+    width:150px;
+    height: 30px;
+    background-color: mediumaquamarine;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: center;
+    border-radius: 30px;
+    margin-top: 5%;
+    cursor: pointer;
+    box-shadow: 0px 5px 10px  rgb(224, 230, 221),0px -5px 10px rgb(221, 226, 217);
+    border:1px solid #ffffff;
+    align-items: center;
+    box-sizing: content-box;
+}
+
+/* login section */
+
+
+.login-form{
+    width: 380px;
+    height: 550px;
+    border-radius: 10px;
+    
+    margin-top: 20px;
+    border:1px solid white;
+    background-color: white;
+    box-shadow: 5px 0px 10px  rgb(100, 104, 101),-5px 0px 10px rgb(100, 104, 101);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 40px;
+}
+
+.sign-in-google{
+    width: 85%;
+    height: 9%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 30px;
+    border:1px solid black;
+    color: white;
+    background-color: black;
+    cursor: pointer;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+}
+
+.sign-in-google a{
+    text-decoration: none;
+    color: white;
+    padding: 10px 80px;
+}
+
+
+.login-form h1{
+    margin-top: 40px;
+    margin-bottom: 30px;
+}
+
+
+
+.form {
+    text-align: center;
+}
+
+.form input{
+    padding: 10px 10px;
+    border: 2px solid black;
+    border-radius: 30px;
+    width: 80%;
+    height: 10%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 16px;
+    outline: none;
+    box-sizing: content-box;
+    
+}
+.form input::placeholder{
+    text-align: center;
+}
+
+.form a{
+    text-decoration: none;
+}
+
+.form button{
+    width: 70%;
+    height: 20%;
+    background-color: mediumaquamarine;
+    padding: 10px 20px;
+    border-radius: 30px;
+    box-shadow: 0px 5px 10px  rgb(224, 230, 221),0px -5px 10px rgb(221, 226, 217);
+    border:1px solid #ffffff;
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    outline: none;
+}
+
+.form p{
+    margin-top: 20px;
+}
+
+.form p a{
+    text-decoration: none;
+}
+
+/* circle section */
+
+.circle-group div{
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background-color: mediumaquamarine;
+    position:absolute;
+    z-index: -1;
+}
+.circle-group .circle1{
+    top: -8%;
+    left: -5%;
+}
+.circle-group .circle2{
+    top: 25%;
+    left: 63%;
+}
+
+.circle-group .circle3{
+    top: 70%;
+    left: -5%;
+}
+
+.circle-group .circle4{
+    top: 70%;
+    right: 0;
+    
+}
+
+/* Pop-up-section */
+.forgot-password{
+    position: absolute;
+    background-color: white;
+    text-align: center;
+    top:50%;
+    left: 50%;
+    width: 300px;
+    height: 300px;
+    transform: translate(-50%,-50%) scale(0) ;
+    border-radius: 6px;
+    box-shadow: 5px 0px 10px  rgb(100, 104, 101),-5px 0px 10px rgb(100, 104, 101);
+    transition: .5s;
+}
+
+.forgot-password.active{
+    transform: translate(-50%,-50%) scale(1);
+}
+
+.forgot-password form p{
+    font-size: 14px;
+    margin-top: 60px;
+}
+
+.forgot-password form input{
+    padding: 10px 10px;
+    border: 2px solid rgb(109, 109, 109);
+    border-radius: 30px;
+    width: 75%;
+    height: 5%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 16px;
+    outline: none;
+    box-sizing: content-box;
+}
+
+.forgot-password form button{
+    width: 70%;
+    height: 10%;
+    background-color: mediumaquamarine;
+    padding: 10px 20px;
+    border-radius: 30px;
+    box-shadow: 0px 5px 10px  rgb(224, 230, 221),0px -5px 10px rgb(221, 226, 217);
+    border:1px solid #ffffff;
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 50px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    outline: none;   
+}
+
+
+/* responsive section */
+
+@media only screen and (max-width:1200px) {
+    .circle-group div{
+        visibility: hidden;
+    }
+    header{
+        padding: 1rem 2rem .5rem;
+    }
+    .main-section{
+        justify-content: center;
+        padding: 1.5rem 2rem;
+    }
+    .get-started{
+        width: 100%;
+        top: 3em;
+    }
+    .login-form{
+        margin-right: 0;
+        margin-top: 100px;
+    }
+}
+
+/* Sign-up CSS */
+
+.main-content{
+    height: 100vh;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.5rem 6rem;
+}
+
+.section-right form{
+    width: 400px;
+    height: 550px;
+    margin-top: 20px;
+    border:1px solid mediumaquamarine;
+    background-color: white;
+    box-shadow: 5px 0px 10px  mediumaquamarine,-5px 0px 10px mediumaquamarine;
+    margin-right: 40px;
+    padding: 20px 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.section-right form h1{
+    font-weight: 600;
+    font-size: 30px;
+    position: absolute;
+    left: 30px;
+}
+
+.section-right form input{
+    padding: 10px 10px;
+    border: 1px solid rgb(109, 109, 109);
+    border-radius: 30px;
+    width: 75%;
+    height: 5%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 16px;
+    outline: none;
+    box-sizing: content-box;
+    
+}
+
+.section-left h1{
+    font-size: 55px;
+    font-weight: 400;
+}
+#user{
+    margin-top: 80px;
+}
+
+.section-right form input::placeholder{
+    text-align: center;
+    font-size: 16px;
+}
+
+.section-right form button{
+    width: 70%;
+    height: 10%;
+    background-color: mediumaquamarine;
+    padding: 10px 20px;
+    border-radius: 30px;
+    box-shadow: 0px 5px 10px  rgb(224, 230, 221),0px -5px 10px rgb(221, 226, 217);
+    border:1px solid #ffffff;
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 100px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    outline: none;
+}
+
+.section-right form span{
+    color: rgb(94, 92, 92);
+    position: relative;
+    bottom: 45px;
+    font-size: 16px;
+    right: 0;
+    transition: all 1s;
+}
+
+.section-right form input:valid + span,
+.section-right form input:focus + span{
+    bottom: 78px;
+    font-size: 14px;
+    right: 100px;
+
+}
+
+
+@media screen and (max-width:1180px) {
+    .section-left h1{
+        font-size: 35px;
+    }
+    .section-left img{
+        width: 0;
+    }
+    .main-content{
+        padding: 2rem;
+        flex-direction: column;
+        
+    }
+    .section-right form{
+
+        margin-bottom: 40px;
+        margin-right: 0;
+    }
+
+
+}
+
+/* change-password-section */
+
+.change-password-section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;   
+}
+
+.change-password-form{
+    width: 400px;
+    height: 400px;
+    margin-top: 20px;
+    border:1px solid mediumaquamarine;
+    background-color: white;
+    box-shadow: 5px 0px 10px  mediumaquamarine,-5px 0px 10px mediumaquamarine;
+    margin-right: 40px;
+    padding: 20px 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.change-password-form input{
+    padding: 10px 10px;
+    border: 2px solid rgb(109, 109, 109);
+    border-radius: 30px;
+    width: 75%;
+    height: 5%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 16px;
+    outline: none;
+    box-sizing: content-box;
+}
+
+.change-password-form button{
+    width: 70%;
+    height: 15%;
+    background-color: mediumaquamarine;
+    padding: 10px 20px;
+    border-radius: 30px;
+    box-shadow: 0px 5px 10px  rgb(224, 230, 221),0px -5px 10px rgb(221, 226, 217);
+    border:1px solid #ffffff;
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 50px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    outline: none;
+}
+
+.change-password-form span{
+    color: rgb(94, 92, 92);
+    position: relative;
+    bottom: 45px;
+    font-size: 16px;
+    right: 0;
+    transition: all 1s;
+}
+
+.change-password-form input:focus + span,
+.change-password-section input:valid + span
+{
+    bottom: 78px;
+    font-size: 14px;
+    right: 60px;
+    
+}
+
+
+/* edit user styling */
+
+.edit-user{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+}
+
+.edit-user form{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2em 4em;
+    background-color: white;
+    box-shadow: 5px 0 10px rgba(0, 0, 0, 0.2),-5px 0 10px rgba(0, 0, 0,0.2);
+    width: 60%;
+    position: relative;
+}
+
+.img-section{
+    position: relative;
+}
+.img-section img{
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.img-section input{
+    display: none;
+}
+
+.hover-add{
+    position: absolute;
+    content: "Upload Images";
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    background-color: rgba(105, 105, 105, 0.384);
+    z-index: 99;
+    top: 0;
+    align-items: center;
+    justify-content: center;
+    display: none;
+    cursor: pointer;
+}
+
+.img-section:hover .hover-add{
+    display: flex;
+}
+
+.text-section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+}
+
+.text-section input{
+    padding: 10px 10px;
+    border: 2px solid rgb(109, 109, 109);
+    border-radius: 6px;
+    width: 100%;
+    height: 5%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 16px;
+    outline: none;
+    box-sizing: content-box;
+}
+
+.text-section textarea{
+    resize: none;
+    width: 108%;
+    border-radius: 6px;
+    border: 2px solid rgb(109, 109, 109);
+    padding: 10px 10px;
+}
+
+.text-section button{
+    width: 70%;
+    height: 10%;
+    background-color: mediumaquamarine;
+    padding: 10px 20px;
+    border-radius: 30px;
+    box-shadow: 0px 5px 10px  rgb(224, 230, 221),0px -5px 10px rgb(221, 226, 217);
+    border:1px solid #ffffff;
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    cursor: pointer;
+}
+
+@media screen and (max-width:1275px) {
+    .edit-user form{
+        width: 80%;
+    }
+}
+
+@media screen and (max-width:907px) {
+    .edit-user form{
+        flex-direction: column;
+    }
+
+    .text-section input,.text-section textarea{
+        width: 300px;
+    }
+}
+
+.close{
+    position: absolute;
+    top: 20px;
+    right: 30px;
+}

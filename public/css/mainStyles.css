@@ -1,0 +1,774 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: 'Heebo', sans-serif;
+    box-sizing: border-box;
+}
+
+
+/* Home page CSS */
+
+body{
+    background-color: #f7f9fa;
+    box-sizing: border-box;
+    
+}
+
+/* header section */
+
+header{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 9999;
+    padding: 1.5rem 6rem;
+}
+
+header h1{
+    font-family: 'Heebo', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 400;
+    cursor: pointer;
+}
+
+header nav ul{
+    display: flex;
+}
+
+header  nav ul li{
+    list-style: none;
+}
+
+header nav a{
+    text-decoration: none;
+    color: rgb(68, 67, 67);
+    font-weight: 400;
+    padding-right: 15px;
+}
+
+footer{
+    position:static;
+    bottom: 0;
+    width: 100vw;
+    background-color: mediumaquamarine;
+    text-align: center;
+    padding: 20px;
+    color: white;
+}
+
+.navIcon{
+    position: absolute;
+    top: 1.5rem;
+    right: 6rem;
+    background-color: mediumaquamarine;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+    cursor: pointer;
+    
+}
+
+.navIcon::before{
+    content: "";
+    width: 30px;
+    height: 1.5px;
+    background-color: black;
+    position: absolute;
+    transform: translateY(-5px);
+    transition: .5s;
+}
+
+.navIcon::after{
+    content: "";
+    width: 30px;
+    height: 1.5px;
+    background-color: black;
+    transform: translateY(5px);
+    transition: .5s;
+}
+
+/* profile-section */
+
+.profile-section{
+    padding: 1.7rem 6.3rem;
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+}
+
+.profile-image{
+    width: 220px;
+    height: 220px;
+    box-shadow: 5px 0 10px 10px rgba(80, 80, 80, 0.123),-5px 0 10px 10px rgba(80, 80, 80, 0.123);
+    margin-right: 20px;
+    object-fit: fill;
+    border-radius: 50%;
+    border: 10px solid mediumaquamarine;
+    box-sizing: content-box;
+}
+
+.profile-section div > *{
+    box-sizing: content-box;
+    padding-bottom: 7px;
+}
+
+.profile-section div a{
+    text-decoration: none;
+}
+
+/* tag section */
+
+.Tags{
+    position: relative;
+    margin: 0 6rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: white;
+    box-shadow: 5px 0 10px rgba(0, 0, 0, 0.226);
+    display: none;
+}
+
+.Tags div{
+    cursor: pointer;
+    padding: 10px 0;
+    z-index: 99;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    
+}
+
+.Tags .slider{
+    position: absolute;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    background-color: mediumaquamarine;
+    transform: translateX(0);
+    transition: 0.5s;
+}
+
+.slider.active{
+    transform: translateX(100%);
+}
+
+
+/* challenge section */
+
+.posts h3{
+    margin: 10px 20px;
+}
+
+.challenge-form{
+    width: 100%;
+    min-height: 100px;
+    background-color: white;
+    border-radius: 6px;
+    padding: 10px;
+    box-shadow: 4px 0 10px rgba(0, 0, 0, 0.226),-4px 0 10px rgba(0, 0, 0, 0.226);
+    overflow: hidden;
+}
+.challenge-form input[type="text"]{
+    padding: 10px 20px;
+    margin: 5px 0;
+    width: 80%;
+}
+
+.radio-container{
+    margin-left: 10xp;
+    width: 50%;
+    display: flex;
+    justify-content: space-around;
+    margin-top: 10px;
+    flex-wrap: nowrap;
+}
+
+.container{
+    text-align: center;
+    background-color: white;
+    width: 100%;
+    border: 1px solid black;
+}
+
+.container input+div{
+    transition: .5s;
+    padding: 10px 10px;
+    box-sizing: content-box;
+}
+
+.container input:checked+div{
+    background-color: mediumaquamarine;
+    box-shadow: 4px 0 10px rgba(0, 0, 0, 0.226),-4px 0 10px rgba(0, 0, 0, 0.226);
+    transform:scale(1.2);
+}
+
+.container input[type="radio"]:hover+div{
+    cursor: pointer;
+}
+
+.challenge-form input[type="radio"]{
+    opacity: 0;
+    position: absolute;
+    cursor: pointer;
+}
+
+
+
+.challenge-form button{
+    background-color: mediumaquamarine;
+    padding: 5px 10px;
+    z-index: 999;
+    margin-top: 10px;
+    width: 100px;
+    float: right;
+}
+
+
+/* post-section */
+
+.post-section{
+    display: flex;
+    justify-content: center;
+    padding: 1.7rem 6.3rem;
+    flex-wrap: nowrap;
+}
+
+.posts{
+    width: 50rem;
+    height: auto;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.create-post{
+    width: 100%;
+    padding: 8px 0;
+    text-align: center;
+    background-color: mediumaquamarine;
+    margin-bottom: 10px;
+    border-radius: 6px;
+    cursor: pointer;
+    box-shadow: 0;
+    transform: translateY(0);
+    transition: 0.5s;
+}
+
+.create-post:hover{
+    box-shadow: 4px 0 10px rgba(0, 0, 0, 0.226),-4px 0 10px rgba(0, 0, 0, 0.226);
+    transform: translateY(-5px);
+}
+
+.post-form,.daily-posts{
+    position: relative;
+    width: 100%;
+    min-height: 100px;
+    background-color: white;
+    border-radius: 6px;
+    padding: 10px;
+    box-shadow: 4px 0 10px rgba(0, 0, 0, 0.226),-4px 0 10px rgba(0, 0, 0, 0.226);
+    display: none;
+    transition: .5s;
+}
+
+.post-form.active{
+    display: block;
+}
+
+.post-form input[type="text"]{
+    padding: 10px 15px;
+    margin-bottom: 10px;
+    border: 0;
+    width: 50%;
+}
+
+.post-form textarea{
+    width: 100%;
+    height: 80px;
+    border: 0;
+    resize: none;
+    font-size: 14px;
+    padding: 10px 15px;
+    margin-bottom: 40px;
+}
+
+.post-form button{
+    background-color: mediumaquamarine;
+    border-radius:36px;
+    padding: 5px 10px;
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    z-index: 999;
+    width: 100px;
+    cursor: pointer;
+}
+
+.daily-posts{
+    margin-top: 15px;
+    display: block;
+}
+
+.daily-posts div div{
+    position: absolute;
+    left: 10px;
+    font-size: 150%;
+    top: 50%;
+    transform: translateY(-50%);
+    color: mediumaquamarine;
+}
+
+.post-body{
+    padding-left: 100px;
+}
+
+.post-body p{
+    font-size: 14px;
+    padding:20px 0;
+    padding-right: 10px;
+}
+
+/* completed challenges section */
+
+.completed-challenges{
+    width: 20rem;
+    height: 23rem;
+    background-color: white;
+    border-radius: 6px;
+    box-shadow: 4px 0 10px rgba(0, 0, 0, 0.226),-4px 0 10px rgba(0, 0, 0, 0.226);
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+    position: relative;
+    transition: .5s;
+    padding: 10px;
+    transform-style: preserve-3d;
+}
+
+.front{
+    background-color: white;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+    z-index: 2;
+}
+
+.back{
+    background-color: white;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    z-index: -1;
+    border-radius: 6px;
+
+    justify-content: space-around;
+    align-items: center;
+    transform: rotateY(180deg);
+    padding: 10px;
+    flex-direction: column;
+    display: none;
+}
+
+.completed-challenges.active{
+    transform: rotateY(180deg);
+}
+
+.completed-challenges.active .back{
+    display: flex;
+}
+
+.tooltip{
+    position:absolute;
+    top: 10px;
+    right: 20px;
+    color: black;
+    z-index: 9999;
+}
+
+.tooltip span{
+    color: black;
+    z-index: 50;
+    cursor: pointer;
+}
+
+.tooltip span:hover+div{
+    display: block;
+}
+.tooltip-container{
+    display: none;
+    position: absolute;
+    background-color: rgb(145, 145, 145);
+    border-radius: 6px;
+    padding: 10px 10px;
+    width: 150px;
+    top: -60px;
+}
+.delete-shadow{
+    position:absolute;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(80, 80, 80, 0.411);
+    transform: scale(0);
+    transition: .5s;
+}
+
+.delete-shadow.active{
+    transform: scale(1);
+}
+
+.delete-box{
+    position:absolute;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+    background-color: white;
+    box-shadow: 5px 0 10px rgba(0, 0, 0, 0.226),-5px 0 10px rgba(0, 0, 0, 0.226);
+    flex-direction: column;
+    z-index: 9999;
+    border-radius: 6px;
+    padding: 10px 30px;
+}
+
+.delete-box p{
+    margin-top: 30px;
+    margin-bottom: 20px;
+    font-size: 18px;
+}
+
+.delete-box form button{
+    width: 15rem;
+    padding: 10px 10px;
+    background-color: mediumaquamarine;
+    border-radius: 36px;
+    text-align: center;
+    cursor: pointer;
+    font-size: 16px;
+    box-shadow: 5px 0 10px rgba(80, 80, 80, 0.37),-5px 0 10px rgba(80, 80, 80, 0.37);   
+}
+.progress-circle{
+    position: relative;
+    box-shadow: 5px 0 10px rgba(80, 80, 80, 0.123),-5px 0 10px rgba(80, 80, 80, 0.123);
+    border-radius: 50%;
+    width: 180px;
+    height: 180px;
+}
+
+.progress-circle svg {
+    width: 300px;
+    height: 180px;
+}
+
+.progress-circle span{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 999;
+    text-align: center;
+    transform: translate(-50%,-50%);
+    font-size: 60px;
+}
+
+.track{
+    fill: none;
+    stroke: rgba(80, 80, 80, 0.123);
+    stroke-width: 10px;
+    
+}
+
+.progress{
+    fill:none;
+    stroke-width: 10px;
+    stroke:mediumaquamarine;
+    stroke-linecap:round;
+    stroke-dasharray: 505;
+    stroke-dashoffset: 505;
+    transform: rotate(-90deg);
+    transform-origin:90px;
+}
+
+.completed-btn{
+    width: 15rem;
+    padding: 10px 10px;
+    background-color: mediumaquamarine;
+    border-radius: 36px;
+    text-align: center;
+    cursor: pointer;
+    font-weight: 500;
+    box-shadow: 5px 0 10px rgba(80, 80, 80, 0.37),-5px 0 10px rgba(80, 80, 80, 0.37);
+}
+
+.alert-shadow{
+    position:absolute;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(80, 80, 80, 0.411);
+}
+
+.alert-box{
+    position:absolute;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+    background-color: white;
+    box-shadow: 5px 0 10px rgba(0, 0, 0, 0.226),-5px 0 10px rgba(0, 0, 0, 0.226);
+    flex-direction: column;
+    z-index: 9999;
+    border-radius: 6px;
+    padding: 10px 30px;
+}
+
+.alert-box p{
+    margin-top: 30px;
+    margin-bottom: 20px;
+    font-size: 18px;
+    transform: scale(1);
+    transition: .5s;
+}
+
+@media screen and (max-width:1166px){
+    .Tags{
+        display: flex;
+    }
+    .completed-challenges{
+        display: none;
+    }
+}
+
+@media  screen and (max-width:879px) {
+    .navIcon{
+        visibility: visible;
+    }
+
+    .navIcon.active::after{
+        transform: rotate(-45deg);
+    }
+
+    .navIcon.active::before{
+        transform: rotate(45deg);
+    }
+
+    header nav{
+        overflow: hidden;
+        position: fixed;
+        bottom: 0;
+        right: 0;
+        width: 100%;
+        align-self: center; 
+        display: flex;
+        justify-content: center;
+        transition: 0.5s;
+        height: 0;
+        align-items: center;
+        background-color: white;
+        z-index: 9999;
+        
+    }
+    header nav.active{
+        height: calc(100vh - 80px);
+    }
+    header nav.active ul{
+        flex-direction: column;
+    }
+
+    header nav.active ul li{
+        padding: 20px 0;
+    }
+
+    header nav a{
+        font-size: 20px;
+    }
+
+    .profile-section{
+        flex-direction: column;
+    }
+
+    .profile-section h2,.profile-section p{
+        text-align: center;
+        margin-top: 10px;
+    }
+    .profile-section a{
+       position: relative;
+       left: 50%;
+       transform: translateX(-50%);
+    }
+}
+
+@media screen and (max-width:650px){
+    header{
+        padding: 1.5rem 1.5rem;
+    }
+    .navIcon{
+        right: 1.5rem;
+    }
+    .profile-section{
+        padding: 1.5rem 1.5rem;
+    }
+    .Tags{
+        margin: 0 2rem;
+    }
+    .post-section{
+        padding: 1rem 1.5rem;
+    }
+}
+
+/* community-posts */
+
+.community-section{
+    height: 100vh;
+}
+.community-post{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.community-post a{
+    text-decoration: none;
+    color: black;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.community-post .posts{
+    width: 80%;
+    min-height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 10px 1rem;
+    background-color: white;
+    box-shadow: 5px 0 10px rgba(80, 80, 80, 0.123),-5px 0 10px rgba(80, 80, 80, 0.123);
+    margin-bottom: 20px;
+}
+
+.community-post .posts div{
+    width: 70%;
+    margin-bottom: 10px;
+    margin-left: 10px;
+}
+
+.Number{
+    font-size: 60px;
+    margin-right: 5px;
+    color: mediumaquamarine;
+}
+
+.posts span{
+    display: flex;
+    color: mediumaquamarine;
+}
+
+.community-post .posts img{
+    width:  150px;
+    height: 150px;
+    object-fit:contain;
+    border-radius: 50%;
+}
+
+@media screen and (max-width:668px) {
+    .posts{
+        flex-direction: column;
+    }
+    .community-post .posts img{
+        width:  100px;
+        height: 100px;
+    }
+    .Number{
+        font-size: 50px;
+    }
+}
+
+
+/* about page */
+
+.about-page{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 80vh;
+    padding:0 6rem;
+}
+.about-page .right-section{
+    width:50%;
+    max-height: 580px;
+}
+
+.about-page .left-section img{
+    width: 100px;
+}
+
+.about-page .left-section h1{
+    font-size: 90px;
+    color: rgb(80, 80, 80);
+}
+
+.circle-group div{
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background-color: mediumaquamarine;
+    position:absolute;
+    z-index: -1;
+}
+.circle-group .circle1{
+    top: -8%;
+    left: -5%;
+}
+.circle-group .circle2{
+    top: 25%;
+    left: 63%;
+}
+
+.circle-group .circle3{
+    top: 70%;
+    left: -5%;
+}
+
+.circle-group .circle4{
+    top: 70%;
+    right: 0;
+    
+}
+
+@media screen and (max-width:900px) {
+    .about-page{
+        padding: 1rem 3rem;
+        margin-top: 50px;
+    }
+
+    .circle-group{
+        display: none;
+    }
+
+    .about-page .left-section {
+        display: none;
+    }
+
+    .about-page .right-section{
+        width: 100%;
+    }
+}

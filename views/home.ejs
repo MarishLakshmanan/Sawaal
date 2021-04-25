@@ -1,0 +1,232 @@
+<%- include("partials/headerMain") -%> 
+
+    <!-- profile section -->
+    <section class="profile-section">
+        <% if(user.image.data){ %>
+            <img src="data:image/<%= user.image.contentType %>;base64,<%= user.image.data.toString('base64') %>  " class="profile-image" alt="">
+        <% }else if(user.imgUrl){ %> 
+            <img src=<%= user.imgUrl %> class="profile-image" alt="">
+        <% }else{ %>
+            <img src="resources/worker.png" class="profile-image" alt="">
+        <% } %> 
+       
+        <div>
+            <h2><%= user.username.charAt(0).toUpperCase()+user.username.slice(1) %> </h2>
+            <p><%= user.Bio %> </p>
+            <p>
+                <% for(var i=0;i<user.Badges;i++){ %>
+                    <img style="width: 30px;" src="resources/badge.png" alt="">
+                <% } %>
+            </p>
+            <% if(owner){ %>
+                <a href="/edit-user">Edit 🖊</a>
+            <% } %>
+           
+        </div>
+    </section>
+
+    <!-- Tags section -->
+    <div class="Tags" >
+        <div class="slider"></div>
+        <div onclick="toggleSliderA()" ><i class="fas fa-list-ul" ></i></div>
+        <div onclick="toggleSliderB()"><i class="fas fa-clipboard-list"></i></div>
+    </div>
+
+    <!-- post section -->
+
+    <section class="post-section">
+
+        <% if(user.challenges && Object.keys(user.challenges).length>0){ %>
+
+        <div class="completed-challenges">
+            <% if(user.challenges) { %>
+
+                <figure class="front">
+                    <h1><%= user.challenges.challengeName %></h1>
+                    <div class="progress-circle">
+                        <svg >
+                            <circle r=80 cx="90" cy="90" class="track"></circle>
+                            <circle data-completed-days= <%= user.challenges.completedDays%> data-total-days=<%= user.challenges.totalDays %>   r=80 cx="90" cy="90" class="progress"></circle>
+                        </svg>
+                        <span><%= user.challenges.completedDays %></span>
+                    </div>
+                    <p>
+                        of <%= user.challenges.totalDays %>  Days 
+                    </p>
+                    <div class="completed-btn" onclick="flip()">
+                        Completed challengs
+                    </div>
+
+                    <!-- <% if(owner){ %> -->
+                    <div class="tooltip">
+                        <span onclick="openAlert()"><i class="fas fa-trash-alt"></i></span>
+                        <div class="tooltip-container">
+                            <p>Delete Challenge</p>
+                        </div>
+                    </div>
+
+                   
+
+                        <!-- <% } %> -->
+                </figure>
+                <figue class="back">
+                    <h1>Completed challenges</h1>
+                    <% if(user.completedChallenges.length>0){ %>
+                    <ul>
+                        <% for(var i=0;i<user.completedChallenges.length;i++){ %>
+                            <li><%= user.completedChallenges[i] %> </li>
+                        <% } %>
+                    </ul>
+                    <% }else { %>
+                        <p>No challenges completed 💔</p>
+                    <% } %>
+                    <div class="completed-btn" onclick="flip()">
+                        Completed challengs
+                    </div>
+                </figure>
+
+
+            <% }else{ %>
+
+            <% } %>
+        </div>
+
+        <% } %> 
+
+        
+        <div class="posts">
+            <% if(user.challenges && Object.keys(user.challenges).length>0){ %>      
+                
+                <!-- create post section -->
+                
+            <% if(owner) { %>
+                <div onclick="toggleCreatePost()" class="create-post">+</div>    
+            <% } %>
+            <div class="post-form">
+                <form action="/create-post" method="post">
+                    <input type="text" name="postTitle" id="" required placeholder="Title">
+                    <textarea name="postText" id="" placeholder="description......" required></textarea>
+                    <button type="submit">Post</button>
+                </form>
+            </div>
+
+            <% for(var i=0;i<user.postLink.length;i++){ %> 
+            <div class="daily-posts">
+                <div>
+                    <div>
+                        <h2 > <%= user.postLink[i].postDay %></h2>
+                        <p style="text-align: center; padding-top: 5px;">Day</p>
+                    </div>
+                </div>
+                <div class="post-body">
+                    <h4><%= user.postLink[i].postTitle %></h4>
+                    <p><%= user.postLink[i].postDescription %></p>
+                </div>
+            </div>
+            <% } %> 
+
+            <% }else{ %> 
+
+
+                <!-- create Challenge section -->
+
+            <h3>You current don't have any challenges 💔 create one </h3>
+            <div class="challenge-form">
+                <form action="/create-challenge" method="post">
+                    
+                    <input type="text" name="challengeName" id="" required placeholder="Challenge Name"><br>
+                    <div class="radio-container">
+                        <label class="container">
+                            <input type="radio" name="challengeDuration" id="30D" value="30" required><div class="30D">30 Days</div></label>
+                        </label>
+                        <label class="container">
+                            <input type="radio" name="challengeDuration" id="60D" value="60" required><div class="60D">60 Days</span></div>
+                        </label>
+                        <label class="container">
+                            <input type="radio" name="challengeDuration" id="100D" value="100" required><div class="100D">100 Days</span></div>
+                        </label>
+                    </div>
+                    <button type="submit">Post</button>
+                </form>
+            </div>
+            <% } %> 
+        </div>
+    </section>
+
+
+    <% if(user.challengeDropped && user.challengeDropped==1){ %>
+        <div class="alert-shadow">
+            <div class="alert-box">
+                <div style="margin-top: 10px; cursor: pointer;"><i onclick="closePopUp()" class="far fa-times-circle fa-lg"></i></div>
+                <p>Oh no you have lost your challenge streak 💔 all your posts are deleted and your progress is resetted</p>      
+            </div>
+        </div>
+    <% } %>
+
+    <% if(user.challengeCompleted){ %>
+        <div class="alert-shadow">
+            <div class="alert-box">
+                <div style="margin-top: 10px; cursor: pointer;"><i onclick="closePopUp()" class="far fa-times-circle fa-lg"></i></div>
+                <p>Congratualtions 🎉🎉🎉 on completing your challenge</p>      
+            </div>
+        </div>
+    <% } %>
+
+    <div class="delete-shadow">
+        <div class="delete-box">
+            <div style="margin-top: 10px; cursor: pointer;"><i onclick="openAlert()" class="far fa-times-circle fa-lg"></i></div>
+            <p>Do you really want to delete this challenge ?</p>
+            <form action="/delete-challenge" method="get"><button type="submit">Yes</button></form>      
+        </div>
+    </div>
+    
+
+    <!-- javascript -->
+
+    <script type="text/javascript">
+
+    const progress = document.querySelector(".progress");
+    const dayPercentage = (progress.getAttribute("data-completed-days") * 100)/progress.getAttribute("data-total-days");
+
+    function openAlert(){
+        document.querySelector(".delete-shadow").classList.toggle("active");
+    }
+    
+    progress.style.strokeDashoffset=505-(dayPercentage*505)/100;
+
+    function flip(){
+        document.querySelector(".completed-challenges").classList.toggle("active");
+    }
+
+    function closePopUp(){
+        document.querySelector(".alert-shadow").style.transform="scale(0)";
+    }
+
+    function toggleCreatePost(){
+        document.querySelector(".post-form").classList.toggle("active");
+    }
+
+
+    function toggleSliderA(){
+        document.querySelector(".slider").classList.remove("active");
+        document.querySelector(".completed-challenges").style.display="none";
+        document.querySelector(".posts").style.display="block";
+    }
+
+    function toggleSliderB(){
+        document.querySelector(".slider").classList.add("active");
+        document.querySelector(".completed-challenges").style.display="flex";
+        document.querySelector(".posts").style.display="none";
+    }
+
+    function toggleNav(){
+        const toggle =  document.querySelector(".navIcon");
+        const navBar = document.querySelector("header nav");
+
+        toggle.classList.toggle("active");
+        navBar.classList.toggle("active");
+    }
+    </script>
+
+
+<%- include("partials/footerMain") -%> 

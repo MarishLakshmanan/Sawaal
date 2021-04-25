@@ -1,0 +1,53 @@
+<%- include("partials/headerMain") -%> 
+
+<section class="community-section">
+
+    <div class="community-post">
+
+   <% if(users.length>0) {%>
+    <% for(var i=0;i<users.length;i++){ %>
+
+        <a href=<%= "/community/"+users[i].userID %>  class="post-anker">
+            <div class="posts">
+                <% if(users[i].image.data){ %>
+                    <img src="data:image/<%= users[i].image.contentType %>;base64,<%= users[i].image.data.toString('base64') %>  "  alt="">
+                <% }else if(users[i].imgUrl){ %> 
+                    <img src=<%= users[i].imgUrl %>  alt="">
+                <% }else{ %>
+                    <img src="resources/worker.png" alt="">
+                <% } %> 
+                <div>
+                    <h3 style="margin-left: 0;"><%= users[i].username %></h3>
+                    <h4><%= users[i].postTitle %> </h4>
+                    <p><%= users[i].postDescription %> </p>
+                </div>
+                <span>
+                    <p class="Number"><%= users[i].postDay %> </p>
+                    <p>th <br>day</p>
+                </span>
+                
+            </div>
+        </a>
+        
+    
+        <% } %> 
+    <% }else{  %>
+        <h2 style="margin-top: 30px;">Today no one have posted Yet 💔</h2>
+    <% } %>
+
+    
+    </div>
+</section>
+
+<script type="text/javascript">
+
+    function toggleNav(){
+        const toggle =  document.querySelector(".navIcon");
+        const navBar = document.querySelector("header nav");
+
+        toggle.classList.toggle("active");
+        navBar.classList.toggle("active");
+    }
+    </script>
+
+<%- include("partials/footerMain") %> 
