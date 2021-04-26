@@ -55,7 +55,7 @@ header h1+a{
     width: 50%;
     height: 75%;
     position: relative;
-    top: 7em;
+    top: 2em;
 }
 
 .btn-get-started a{
@@ -76,6 +76,7 @@ header h1+a{
     border:1px solid #ffffff;
     align-items: center;
     box-sizing: content-box;
+    margin-bottom: 20px;
 }
 
 /* login section */
@@ -114,7 +115,7 @@ header h1+a{
 .sign-in-google a{
     text-decoration: none;
     color: white;
-    padding: 10px 80px;
+    padding: 10px 10%;
 }
 
 
@@ -278,6 +279,15 @@ header h1+a{
     .login-form{
         margin-right: 0;
         margin-top: 100px;
+    }
+}
+
+@media only screen and (max-width:425px){
+    .main-section{
+        padding: 10px 10px;
+    }
+    header{
+        padding: 1rem 20px .5rem;
     }
 }
 

@@ -57,6 +57,10 @@ footer{
     color: white;
 }
 
+footer.sticky{
+    position: fixed;
+}
+
 .navIcon{
     position: absolute;
     top: 1.5rem;
@@ -69,6 +73,7 @@ footer{
     align-items: center;
     visibility: hidden;
     cursor: pointer;
+    z-index: 99999;
     
 }
 
@@ -180,12 +185,11 @@ footer{
 }
 
 .radio-container{
-    margin-left: 10xp;
-    width: 50%;
     display: flex;
     justify-content: space-around;
     margin-top: 10px;
     flex-wrap: nowrap;
+    padding: 20px;
 }
 
 .container{
@@ -630,6 +634,23 @@ footer{
     }
 }
 
+@media screen and (max-width:530px){
+    .daily-posts div div{
+        position:static;
+        font-size: 150%;
+        transform: translateY(0);
+        color: mediumaquamarine;
+        text-align: center;
+    }
+    .post-body{
+        padding-left: 0;
+    }
+
+    .posts{
+        margin: 0;
+    }
+}
+
 /* community-posts */
 
 .community-section{
@@ -698,6 +719,9 @@ footer{
     }
     .Number{
         font-size: 50px;
+    }
+    .community-post .posts div{
+        width: auto;
     }
 }
 
